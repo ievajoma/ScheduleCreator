@@ -39,8 +39,14 @@ $minutes = array($_POST["time_1"], $_POST["time_2"], $_POST["time_3"]);
 
 for ($i = 0; $i < 3; $i++) {
 
+    if (is_numeric($minutes[$i])) {
+
     $endTime = $time->add(new DateInterval('PT' . $minutes[$i] . 'M'));
     $final = $endTime->format('H:i');
+    } else {
+        echo "Kļūda! Jāaizpilda lauciņi korekti!";
+        break;
+    }
 
     echo "Uzdevums \"" . $issues[$i] . "\" jāizpilda līdz pulkstens " . $final . " .<br>";
 }
