@@ -41,14 +41,14 @@ for ($i = 0; $i < 3; $i++) {
 
     if (is_numeric($minutes[$i])) {
 
-    $endTime = $time->add(new DateInterval('PT' . $minutes[$i] . 'M'));
-    $final = $endTime->format('H:i');
+        $endTime = $time->add(new DateInterval('PT' . $minutes[$i] . 'M'));
+        $final = $endTime->format('H:i');
+
+        echo "Uzdevums \"" . $issues[$i] . "\" jāizpilda līdz pulkstens " . $final . " .<br>";
     } else {
         echo "Kļūda! Jāaizpilda lauciņi korekti!";
         break;
     }
-
-    echo "Uzdevums \"" . $issues[$i] . "\" jāizpilda līdz pulkstens " . $final . " .<br>";
 }
 
 ?>
